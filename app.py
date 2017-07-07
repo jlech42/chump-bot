@@ -3,11 +3,11 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask import jsonify
+from flask import request
 
 app = Flask(__name__)
 
 DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:////tmp/flask_app.db')
-
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL
 db = SQLAlchemy(app)
 
@@ -25,6 +25,8 @@ class User(db.Model):
 def index():
     json_response = []
     json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
+    data = request.json_response
+    print(data)
     return jsonify(json_response)
 
 '''
