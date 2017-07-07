@@ -27,7 +27,7 @@ def index():
     # imd is the Immutable Dictionary returned by chatfuel
 
     imd = request.args
-    fb_id = imd.getlist('messenger user id')
+    fb_id = imd.getlist('messenger user id')[0]
     print(fb_id)
     json_response = []
     json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
