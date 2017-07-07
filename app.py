@@ -25,7 +25,7 @@ class User(db.Model):
 def index():
     json_response = []
     json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
-    data = request.json_response
+    data = request.json
     print(data)
     return jsonify(json_response)
 
