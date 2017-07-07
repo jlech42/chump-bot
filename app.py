@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, render_template, request, redirect, url_for
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -20,11 +21,18 @@ class User(db.Model):
     self.name = name
     self.email = email
 
+@app.route('/', methods=['GET'])
+def index():
+    json_response = []
+    json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
+    json_response.append({ "text": "Hi. " + str(2) + " is a lucky number..." })
+    return jsonify(json_response)
 
+'''
 @app.route('/', methods=['GET'])
 def index():
   return render_template('index.html', users=User.query.all())
-
+'''
 
 @app.route('/user', methods=['POST'])
 def user():
