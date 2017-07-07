@@ -24,10 +24,10 @@ class User(db.Model):
 
 @app.route('/', methods=['GET'])
 def index():
+    print(request.args)
     json_response = []
     json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
-    data = request.json
-    print(data)
+
     return jsonify(json_response)
 
 '''
