@@ -24,7 +24,11 @@ class User(db.Model):
 
 @app.route('/', methods=['GET'])
 def index():
-    print(request.args)
+    # imd is the Immutable Dictionary returned by chatfuel
+
+    imd = request.args
+    fb_id = imd.getlist('messenger user id')
+    print(fb_id)
     json_response = []
     json_response.append({ "text": "Hi. " + str(1) + " is a lucky number..." })
 
