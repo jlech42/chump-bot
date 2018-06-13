@@ -1,7 +1,7 @@
-Flask Heroku Sample
+Flask Heroku FB Bot
 ====================
 
-A simple Python Flask example application that's ready to run on Heroku.
+Fun Facebook Bot for Finding Movies
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
